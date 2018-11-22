@@ -134,12 +134,12 @@ local({
   ylab("Temperatura")+
   xlab("Presion")+
   ggtitle(vec2[i])+
-  theme(plot.title = element_text(size = 13),axis.title = element_text(size = 10))  
+  theme(plot.title = element_text(size = 11),axis.title = element_text(size = 10))  
   theme_bw()
   glist[[i]]<<-p1
 })
 
-perfiles<-do.call(grid.arrange,c(glist,ncol=2))
+perfiles<-grid.arrange(glist[[1]],glist[[2]],glist[[3]],glist[[4]],top="Sondeos realizados en 4 dias")
 
 #ggsave(perfiles,filename = "C:/Users/Usuario/Documents/Facultad/FCEN/Laboratorio de procesamiento de informacion meteorologica/Tp_Final/Perfiles.jpeg")
 ggsave(perfiles,filename = "/media/dcao-19/STORE N GO/Laboratorio de procesamiento de informacion meteorologica/Tp_Final/Perfiles.jpeg")
